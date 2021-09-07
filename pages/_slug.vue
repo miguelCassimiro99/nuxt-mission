@@ -1,20 +1,17 @@
 <template>
   <section>
-    <NuxtLink to='/'>Home</NuxtLink>
-    <div class="container">
-      <div>
-        <img :src="planet.image" alt="" />
-        <h1 class="title">{{ planet.title }}</h1>
-      </div>
-      <PlanetList />
-      <div>
-      </div>
+    <div class='planet-info'>
+      <img :src="planet.image" alt="" />
+      <h1 class="title">{{ planet.title }}</h1>
     </div>
+    <PlanetList />
   </section>
 </template>
 
 <script>
 export default {
+  transition: 'bounce',
+
   async asyncData({ params }) {
     const planet = await fetch(
       `https://api.nuxtjs.dev/planets/${params.slug}`
@@ -50,6 +47,9 @@ export default {
 }
 </script>
 <style scoped>
+.planet-info {
+  display: block;
+}
 
 h1 {
   font-family: Nunito, sans-serif;

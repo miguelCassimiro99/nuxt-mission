@@ -1,7 +1,14 @@
 <template>
-  <div class='container'>
-    <Nuxt />
+  <div>
+    <div class="navigation-links">
+      <NuxtLink to='/'>Home</NuxtLink>
+      <NuxtLink to='/about'>About</NuxtLink>
+    </div>
+    <div class='container'>
+      <Nuxt />
+    </div>
   </div>
+
 </template>
 <script>
 export default {
@@ -17,6 +24,10 @@ export default {
 }
 </script>
 <style scoped>
+.navigation-links {
+  display: block;
+  text-align: center;
+}
 .container {
   margin: 0 auto;
   min-height: 100vh;

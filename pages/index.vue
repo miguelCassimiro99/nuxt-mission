@@ -3,11 +3,7 @@
     <div>
       <NuxtLogo />
       <h1 class="title">Nuxt Mission</h1>
-      <button @click='showPlanets'>Show planets</button>
-      <div v-if="show">
-        <LazyPlanetList />
-      </div>
-
+      <PlanetList />
     </div>
   </section>
 
@@ -16,16 +12,6 @@
 import NuxtLogo from '~/components/NuxtLogo'
 export default {
   components: { NuxtLogo },
-  data() {
-    return {
-      show: false,
-    }
-  },
-  methods: {
-    showPlanets() {
-      this.show = !this.show;
-    }
-  }
 }
 </script>
 
